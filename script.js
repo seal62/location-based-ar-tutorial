@@ -33,8 +33,8 @@ function loadPlaces(position) {
   return [
     {
       location: {
-        lat: -33.758636,
-        lng: 150.900759,
+        lat: -33.755838,
+        lng: 150.901260,
       },
       name: 'marker'
     }
@@ -60,7 +60,7 @@ window.onload = () => {
             const placeText = document.createElement('a-link');
             placeText.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
             placeText.setAttribute('title', place.name);
-            placeText.setAttribute('scale', '2 2 2');
+            placeText.setAttribute('scale', '5 5 5');
             
             placeText.addEventListener('loaded', () => {
               console.log("loaded place text")
