@@ -37,6 +37,13 @@ function loadPlaces(position) {
         lng: 150.901260,
       },
       name: 'marker'
+    },
+    {
+      location: {
+        lat: -33.755791,
+        lng: 150.900653,
+      },
+      name: 'marker'
     }
   ]
 };
