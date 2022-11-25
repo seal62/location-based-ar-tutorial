@@ -46,6 +46,14 @@ function loadPlaces(position) {
       },
       name: 'marker 2',
       colour: 'green'
+    },
+    {
+      location: {
+        lat: -33.760092,
+        lng: 150.899820,
+      },
+      name: 'marker 3',
+      colour: 'yellow'
     }
   ]
 };
