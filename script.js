@@ -36,14 +36,16 @@ function loadPlaces(position) {
         lat: -33.755838,
         lng: 150.901260,
       },
-      name: 'marker'
+      name: 'marker 1',
+      colour: 'blue'
     },
     {
       location: {
         lat: -33.755791,
         lng: 150.900653,
       },
-      name: 'marker'
+      name: 'marker 2',
+      colour: 'green'
     }
   ]
 };
@@ -59,16 +61,16 @@ window.onload = () => {
       // loadPlaces(position.coords)
       //   .then((places) => {
       //     places.forEach((place) => {
-        loadPlaces().forEach((place, idx) => {
+        loadPlaces().forEach((place) => {
             const latitude = place.location.lat;
             const longitude = place.location.lng;
 
             // add place name
             const placeText = document.createElement('a-sphere');
             placeText.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-            placeText.setAttribute('title', place.name + idx);
-            placeText.setAttribute('scale', '2 2 2');
-            placeText.setAttribute('material', 'color: green');
+            placeText.setAttribute('title', place.name);
+            placeText.setAttribute('scale', '1 1 1');
+            placeText.setAttribute('material', 'color: ' + place.colour);
             
             placeText.addEventListener('loaded', () => {
               console.log("loaded place text")
