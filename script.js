@@ -63,7 +63,8 @@ window.onload = () => {
             placeText.setAttribute('scale', '15 15 15');
             
             placeText.addEventListener('loaded', () => {
-                window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
+              console.log("loaded place text")
+              window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
             });
 
             scene.appendChild(placeText);
