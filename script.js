@@ -64,10 +64,11 @@ window.onload = () => {
             const longitude = place.location.lng;
 
             // add place name
-            const placeText = document.createElement('a-link');
+            const placeText = document.createElement('a-sphere');
             placeText.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
             placeText.setAttribute('title', place.name + idx);
             placeText.setAttribute('scale', '2 2 2');
+            placeText.setAttribute('material', 'color: green');
             
             placeText.addEventListener('loaded', () => {
               console.log("loaded place text")
