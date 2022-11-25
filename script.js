@@ -59,15 +59,15 @@ window.onload = () => {
       // loadPlaces(position.coords)
       //   .then((places) => {
       //     places.forEach((place) => {
-        loadPlaces().forEach((place) => {
+        loadPlaces().forEach((place, idx) => {
             const latitude = place.location.lat;
             const longitude = place.location.lng;
 
             // add place name
             const placeText = document.createElement('a-link');
             placeText.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-            placeText.setAttribute('title', place.name);
-            placeText.setAttribute('scale', '1 1 1');
+            placeText.setAttribute('title', place.name + idx);
+            placeText.setAttribute('scale', '2 2 2');
             
             placeText.addEventListener('loaded', () => {
               console.log("loaded place text")
