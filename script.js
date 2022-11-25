@@ -29,12 +29,12 @@ function loadPlaces(position) {
   //         console.error('Error with places API', err);
   //     })
 
-  // -33.758474, 150.900522
+  // -33.758636, 150.900759
   return [
     {
       location: {
-        lat: -33.758474,
-        lng: 150.900522,
+        lat: -33.758636,
+        lng: 150.900759,
       },
       name: 'marker'
     }
