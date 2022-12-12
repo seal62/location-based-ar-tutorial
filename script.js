@@ -65,36 +65,35 @@ window.onload = () => {
   // first get current user location
   return navigator.geolocation.getCurrentPosition(function (position) {
 
-      // than use it to load from remote APIs some places nearby
-      // loadPlaces(position.coords)
-      //   .then((places) => {
-      //     places.forEach((place) => {
-        loadPlaces().forEach((place) => {
-            const latitude = place.location.lat;
-            const longitude = place.location.lng;
+    // than use it to load from remote APIs some places nearby
+    // loadPlaces(position.coords)
+    //   .then((places) => {
+    //     places.forEach((place) => {
+      loadPlaces().forEach((place) => {
+          const latitude = place.location.lat;
+          const longitude = place.location.lng;
 
-            // add place name
-            const placeText = document.createElement('a-sphere');
-            placeText.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-            placeText.setAttribute('title', place.name);
-            // placeText.setAttribute('scale', '0.5 0.5 0.5');
-            placeText.setAttribute('radius', 0.5);
-            placeText.setAttribute('material', 'color: ' + place.colour);
-            
-            placeText.addEventListener('loaded', () => {
-              console.log("loaded place text")
-              window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
-            });
-
-            scene.appendChild(placeText);
+          // add place name
+          const placeText = document.createElement('a-sphere');
+          placeText.setAttribute('gps-new-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+          placeText.setAttribute('title', place.name);
+          // placeText.setAttribute('scale', '0.5 0.5 0.5');
+          placeText.setAttribute('radius', 0.5);
+          placeText.setAttribute('material', 'color: ' + place.colour);
+          
+          placeText.addEventListener('loaded', () => {
+            console.log("loaded place text")
+            window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
           });
-        // })
+
+          scene.appendChild(placeText);
+        });
+      // })
   },
-      (err) => console.error('Error in retrieving position', err),
-      {
-        enableHighAccuracy: true,
-        maximumAge: 0,
-        timeout: 27000,
-      }
-  );
+  (err) => console.error('Error in retrieving position', err),
+  {
+    enableHighAccuracy: true,
+    maximumAge: 0,
+    timeout: 27000,
+  });
 };
