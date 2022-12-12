@@ -75,7 +75,7 @@ window.onload = () => {
 
           // add place name
           const placeText = document.createElement('a-sphere');
-          placeText.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+          placeText.setAttribute('gps-new-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
           placeText.setAttribute('title', place.name);
           // placeText.setAttribute('scale', '0.5 0.5 0.5');
           placeText.setAttribute('radius', 0.5);
